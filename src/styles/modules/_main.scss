@@ -1,0 +1,94 @@
+html,
+body {
+	height: 100%;
+}
+
+body {
+	color: #333;
+	width: 100%;
+	display: flex;
+	min-width: 320px;
+	min-height: 100vh;
+	flex-direction: column;
+	background-color: $white;
+}
+
+//
+// Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+//
+b, strong {
+	font-weight: 700;
+}
+
+em, i, dfn, cite {
+	font-style: italic;
+}
+
+//
+// Prevent `sub` and `sup` affecting `line-height` in all browsers.
+//
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+small {
+	font-size: 80%;
+}
+
+mark {
+	background-color: #000;
+	color: #000;
+}
+
+//
+// Remove border when inside `a` element in IE 8/9/10.
+//
+img {
+	border: 0;
+}
+
+//
+// Correct overflow not hidden in IE 9/10/11.
+//
+svg:not(:root) {
+	overflow: hidden;
+}
+
+//
+// Address differences between Firefox and other browsers.
+//
+hr {
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	height: 0;
+}
+
+//
+// Contain overflow in all browsers.
+//
+pre {
+	overflow: auto;
+}
+
+.content {
+	> * + * {
+		margin-top: 2.5rem;
+	}
+
+	img {
+		display: inline-block;
+		max-width: 100%;
+		vertical-align: top;
+	}
+}

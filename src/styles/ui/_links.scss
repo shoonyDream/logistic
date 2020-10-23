@@ -1,0 +1,9 @@
+.link {
+	line-height: 1.2;
+    text-decoration: none;
+    transition: color 0.2s linear;
+
+    &:hover,
+    &:focus {
+    }
+}

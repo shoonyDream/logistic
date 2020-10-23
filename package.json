@@ -1,0 +1,49 @@
+{
+  "name": "logistic",
+  "version": "1.0.0",
+  "description": "",
+  "repository": "https://github.com/shoonyDream/logistic",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build:dev",
+    "build:dev": "webpack-dev-server --env dev --mode none",
+    "build:prod": "webpack --env prod --mode production",
+    "predeploy": "cross-env DEPLOY_KEY=/logistic yarn build:prod",
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "mwieth",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^8.6.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-es2015-destructuring": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "cross-env": "^6.0.0",
+    "css-loader": "^2.1.1",
+    "cssnano": "^4.1.10",
+    "file-loader": "^3.0.1",
+    "gh-pages": "^2.1.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "node-sass": "^4.11.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^2.1.5",
+    "sass-loader": "^7.0.2",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^3.0.1",
+    "webpack-dev-server": "^3.3.1",
+    "webpack-md5-hash": "0.0.6"
+  },
+  "dependencies": {
+    "body-scroll-lock": "^2.6.4",
+    "jquery": "2",
+    "normalize.css": "^8.0.1",
+    "swiper": "^5.0.3",
+    "velocity-animate": "^1.5.2"
+  }
+}

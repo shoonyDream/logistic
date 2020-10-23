@@ -1,0 +1,18 @@
+//base
+@import 'modules/vendor';
+@import 'modules/variables';
+@import 'modules/main';
+@import 'modules/reset';
+@import 'modules/typography';
+
+//ui
+@import 'ui/main';
+@import 'ui/forms';
+@import 'ui/links';
+@import 'ui/section';
+@import 'ui/header';
+@import 'ui/footer';
+
+//component styles
+@import '../components/navigation/navigation';
+
