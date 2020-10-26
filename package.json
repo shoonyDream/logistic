@@ -41,8 +41,12 @@
   },
   "dependencies": {
     "body-scroll-lock": "^2.6.4",
+    "imports-loader": "^1.2.0",
     "jquery": "2",
+    "jquery-mousewheel": "^3.1.13",
+    "malihu-custom-scrollbar-plugin": "^3.1.5",
     "normalize.css": "^8.0.1",
+    "select2": "^4.0.13",
     "swiper": "^5.0.3",
     "velocity-animate": "^1.5.2"
   }
