@@ -1,8 +1,6 @@
 .page-wrapper {
 	flex: 1 0 auto;
 	overflow: hidden;
-	padding-top: 60px;
-	padding-bottom: 60px;
 }
 
 body {
@@ -17,7 +15,7 @@ body {
 	padding-right: 20px;
 
 	&--wide {
-		max-width: 1350px;
+		max-width: 1220px;
 	}
 }
 
@@ -57,3 +55,5 @@ body {
 		display: inline-block!important;
 	}
 }
+
+@include colorsClases($colors, $colorNames);

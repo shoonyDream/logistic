@@ -9,3 +9,48 @@ $manatee: #959597;
 $silver: #bbbbbb;
 $bright-gray: #3d4050;
 $bright-gray-opacity-0-9: rgba(61, 64, 80, 0.9);
+$storm-gray: #6f6d7b;
+
+$colors:
+	$white,
+	$charade,
+	$havelock-blue,
+	$jelly-bean,
+	$vulcan,
+	$picton-blue,
+	$shark,
+	$manatee,
+	$silver,
+	$bright-gray,
+	$bright-gray-opacity-0-9,
+	$storm-gray;
+
+$colorNames:
+	'white',
+	'charade',
+	'havelock-blue',
+	'jelly-bean',
+	'vulcan',
+	'picton-blue',
+	'shark',
+	'manatee',
+	'silver',
+	'bright-gray',
+	'bright-gray-opacity-0-9',
+	'storm-gray';
+
+@mixin colorsClases($colors, $colorNames) {
+  $i: 1;
+  @each $color in $colors {
+    .#{nth($colorNames, $i)}-text {
+      color: $color !important;
+    }
+    .#{nth($colorNames, $i)}-bg {
+      background-color: $color !important;
+    }
+    .#{nth($colorNames, $i)}-fill {
+      fill: $color !important;
+    }
+    $i: $i + 1;
+  }
+}

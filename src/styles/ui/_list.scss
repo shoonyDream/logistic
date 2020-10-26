@@ -1,0 +1,20 @@
+.list {
+	&--ul {
+		li {
+    		line-height: 1.2;
+			padding-left: 10px;
+			position: relative;
+
+			&:before {
+				left: 0;
+				top: 2px;
+				content: '-';
+				position: absolute;
+			}
+		}
+
+		li + li {
+			margin-top: 9px;
+		}
+	}
+}

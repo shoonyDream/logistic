@@ -1,6 +1,4 @@
 import $ from 'jquery';
-window.jQuery = $;
-window.$ = $;
 import select2 from 'select2';
 import jqueryMousewheel from 'jquery-mousewheel';
 import mCustomScrollbar from 'malihu-custom-scrollbar-plugin';

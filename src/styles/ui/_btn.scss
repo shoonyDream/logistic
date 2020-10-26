@@ -1,0 +1,43 @@
+.btn.btn {
+	$secondary: $white;
+	$primary: $havelock-blue;
+
+	font-size: 14px;
+	border: 1px solid;
+	padding: 13px 56px;
+	border-radius: 4px;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	&--primary {
+		color: $white;
+		border-color: $white;
+		background-color: $havelock-blue;
+
+		&-inverse {
+			color: $shark;
+			background-color: $white;
+			border-color: $havelock-blue;
+		}
+	}
+
+	&--secondary {
+		color: $shark;
+		background-color: $white;
+		border-color: $storm-gray;
+	}
+}
+
+.btn-group {
+	$parent: &;
+
+	&--horizontal {
+		display: flex;
+		margin: -20px -14px 0;
+
+		#{$parent}__item {
+			padding: 0 14px;
+			margin-top: 20px;
+		}
+	}
+}

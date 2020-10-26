@@ -9,10 +9,14 @@
 @import 'ui/main';
 @import 'ui/forms';
 @import 'ui/links';
+@import 'ui/btn';
+@import 'ui/list';
 @import 'ui/section';
 @import 'ui/header';
 @import 'ui/footer';
 
 //component styles
+@import '../components/file-upload/file-upload';
 @import '../components/navigation/navigation';
+@import '../components/select/select';
 
