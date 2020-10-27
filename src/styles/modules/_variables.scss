@@ -10,6 +10,7 @@ $silver: #bbbbbb;
 $bright-gray: #3d4050;
 $bright-gray-opacity-0-9: rgba(61, 64, 80, 0.9);
 $storm-gray: #6f6d7b;
+$iron: #dfdfe1;
 
 $colors:
 	$white,
@@ -23,7 +24,8 @@ $colors:
 	$silver,
 	$bright-gray,
 	$bright-gray-opacity-0-9,
-	$storm-gray;
+	$storm-gray,
+	$iron;
 
 $colorNames:
 	'white',
@@ -37,7 +39,8 @@ $colorNames:
 	'silver',
 	'bright-gray',
 	'bright-gray-opacity-0-9',
-	'storm-gray';
+	'storm-gray',
+	'iron';
 
 @mixin colorsClases($colors, $colorNames) {
   $i: 1;

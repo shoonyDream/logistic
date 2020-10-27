@@ -31,6 +31,14 @@ body {
 	text-transform: uppercase;
 }
 
+.u-entire-width {
+	width: 100%;
+}
+
+.u-entire-height {
+	height: 100%;
+}
+
 @media (max-width: 1150px) {
 	.container {
 		padding-left: 20px;

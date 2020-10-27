@@ -3,9 +3,11 @@ import select2 from 'select2';
 import jqueryMousewheel from 'jquery-mousewheel';
 import mCustomScrollbar from 'malihu-custom-scrollbar-plugin';
 
-$('.js-example-basic-single').select2({
+$('.js-select').select2({
 	placeholder: 'Выберите тип системы',
-	minimumResultsForSearch: Infinity
+	minimumResultsForSearch: Infinity,
+    width: '100%',
+    theme: 'default select--dark'
 });
 
 $('.select').on('select2:open', function () {

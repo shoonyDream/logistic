@@ -1,30 +1,19 @@
 .upload-file__input {
     opacity: 0;
-    position: absolute;
     z-index: -1;
-    overflow: hidden;
     width: 0.4px;
     height: 0.4px;
+    overflow: hidden;
+    position: absolute;
 }
 
 .upload-file__label {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 240px;
-    border: 2px dashed #150B22;
-    padding: 9px 49px;
-    border-radius: 6px;
     cursor: pointer;
-}
+    align-items: center;
+    justify-content: center;
 
-.upload-file__icon {
-    width: 30px;
-    height: auto;
-    margin-right: 11px;
-}
-
-.upload-file__label .upload-file__text,
-.upload-file__label .upload-file__icon path {
-    transition: .25s ease;
+    > i {
+        margin-right: 11px;
+    }
 }
