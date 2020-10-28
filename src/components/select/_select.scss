@@ -15,6 +15,7 @@
 
 		.select2-selection__placeholder {
 			color: $charade;
+			font-size: 18px;
 		}
 
 		.select2-selection__rendered {
@@ -33,13 +34,15 @@
 
 		.select2-selection__arrow:before {
 			content: '\f107';
-		    font-weight: 900;
+			font-weight: 900;
 			font-family: "Font Awesome 5 Free";
 		}
 	}
 
 	&.select2-container--open {
 		.select2-selection--single {
+			padding-left: 10px;
+			padding-right: 40px;
 			background-color: $bright-gray;
 		}
 
@@ -57,11 +60,35 @@
 }
 
 .select--dark {
+	&.select2-container--default .select2-results>.select2-results__options {
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+	&.select2-container--default .select2-results__option[aria-selected=true] {
+		color: $picton-blue;
+		background-color: transparent;
+	}
+
 	.select2-dropdown {
 		background-color: rgba(39, 39, 51, 0.6);
 	}
 	.select2-results__option {
 		color: $white;
+		padding-left: 17px;
+		font-size: 18px;
+		line-height: 1.2;
+		padding-top: 7px;
+		padding-bottom: 7px;
+	}
+
+	.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+		width: 7px;
+		background-color: #3e9cdc!important;
+	}
+
+	.mCSB_scrollTools .mCSB_draggerRail {
+		width: 7px;
 	}
 }
 

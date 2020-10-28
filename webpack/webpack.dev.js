@@ -24,7 +24,8 @@ module.exports = {
     open: true,
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: selectedPreprocessor.fileRegexp,
         use: [{
             loader: MiniCssExtractPlugin.loader
@@ -88,6 +89,16 @@ module.exports = {
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader'
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ["@babel/preset-env"]
+          }
+        }
       }
     ]
   },

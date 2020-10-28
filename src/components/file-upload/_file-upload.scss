@@ -1,19 +1,31 @@
-.upload-file__input {
-    opacity: 0;
-    z-index: -1;
-    width: 0.4px;
-    height: 0.4px;
-    overflow: hidden;
-    position: absolute;
-}
+.upload-file {
+    &__input {
+        opacity: 0;
+        z-index: -1;
+        width: 0.4px;
+        height: 0.4px;
+        overflow: hidden;
+        position: absolute;
+    }
 
-.upload-file__label {
-    display: flex;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
+    &__label {
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
 
-    > i {
-        margin-right: 11px;
+        > i {
+            margin-right: 8px;
+            font-size: 19px;
+        }
+
+        &.btn.btn {
+            line-height: 1.2;
+            padding: 14px 56px 13px;
+        }
+    }
+
+    &__text {
+        margin-top: 0.2em;
     }
 }

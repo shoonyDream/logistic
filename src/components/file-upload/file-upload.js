@@ -1,99 +1,49 @@
-document.addEventListener('DOMContentLoaded', () => {
+"use strict";
 
-    const forms = document.querySelectorAll('form');
-    const inputFile = document.querySelectorAll('.upload-file__input');
+document.addEventListener('DOMContentLoaded', function () {
+  var forms = document.querySelectorAll('form');
+  var inputFile = document.querySelectorAll('.upload-file__input');
+  /////////// Кнопка «Прикрепить файл» ///////////
 
-    /////////// Кнопка «Прикрепить файл» ///////////
-    inputFile.forEach(function(el) {
-        let textSelector = document.querySelector('.upload-file__text');
-        let fileList;
+  inputFile.forEach(function (el) {
+    var textSelector = document.querySelector('.upload-file__text');
+    var fileList;
+    // Событие выбора файла(ов)
 
-        // Событие выбора файла(ов)
-        el.addEventListener('change', function (e) {
+    el.addEventListener('change', function (e) {
+      // создаём массив файлов
+      fileList = [];
 
-            // создаём массив файлов
-            fileList = [];
-            for (let i = 0; i < el.files.length; i++) {
-                fileList.push(el.files[i]);
-            }
+      for (var i = 0; i < el.files.length; i++) {
+        fileList.push(el.files[i]);
+      }
+      // вызов функции для каждого файла
 
-            // вызов функции для каждого файла
-            fileList.forEach(file => {
-                uploadFile(file);
-            });
-        });
 
-        // Проверяем размер файлов и выводим название
-        const uploadFile = (file) => {
+      fileList.forEach(function (file) {
+        uploadFile(file);
+      });
+    }); // Проверяем размер файлов и выводим название
 
-            // файла <5 Мб
-            if (file.size > 5 * 1024 * 1024) {
-                alert('Файл должен быть не более 5 МБ.');
-                return;
-            }
+    var uploadFile = function uploadFile(file) {
+      // файла <5 Мб
+      if (file.size > 5 * 1024 * 1024) {
+        alert('Файл должен быть не более 5 МБ.');
+        return;
+      } // Показ загружаемых файлов
 
-            // Показ загружаемых файлов
-            if (file && file.length > 1) {
-                if ( file.length <= 4 ) {
-                    textSelector.textContent = `Выбрано ${file.length} файла`;
-                }
-                if ( file.length > 4 ) {
-                    textSelector.textContent = `Выбрано ${file.length} файлов`;
-                }
-            } else {
-                textSelector.textContent = file.name;
-            }
+
+      if (file && file.length > 1) {
+        if (file.length <= 4) {
+          textSelector.textContent = "\u0412\u044B\u0431\u0440\u0430\u043D\u043E ".concat(file.length, " \u0444\u0430\u0439\u043B\u0430");
         }
 
-    });
-
-    // Отправка формы на сервер
-    const postData = async (url, fData) => { // имеет асинхронные операции
-
-        // начало отправки
-        // здесь можно оповестить пользователя о начале отправки
-
-        // ждём ответ, только тогда наш код пойдёт дальше
-        let fetchResponse = await fetch(url, {
-            method: 'POST',
-            body: fData
-        });
-
-        // ждём окончания операции
-        return await fetchResponse.text();
+        if (file.length > 4) {
+          textSelector.textContent = "\u0412\u044B\u0431\u0440\u0430\u043D\u043E ".concat(file.length, " \u0444\u0430\u0439\u043B\u043E\u0432");
+        }
+      } else {
+        textSelector.textContent = file.name;
+      }
     };
-
-    if (forms) {
-        forms.forEach(el => {
-            el.addEventListener('submit', function (e) {
-                e.preventDefault();
-
-                // создание объекта FormData
-                let fData = new FormData();
-
-                // Добавление всех input, кроме type="file"
-                el.querySelectorAll('input:not([type="file"])').forEach(input => {
-                    fData.append(input.name, input.value);
-                });
-
-                // Добавление файлов input type file
-                let file = el.querySelector('.upload-file__input');
-                for (let i = 0; i < (file.files.length); i++) {
-                    fData.append('files[]', file.files[i]); // добавляем файлы в объект FormData()
-                }
-
-                // Отправка на сервер
-                postData('./mail.php', fData)
-                    .then(fetchResponse => {
-                        console.log('Данные успешно отправлены!');
-                        console.log(fetchResponse);
-                    })
-                    .catch(function (error) {
-                        console.log('Ошибка!');
-                        console.log(error);
-                    });
-            });
-        });
-    };
-
+  });
 });
