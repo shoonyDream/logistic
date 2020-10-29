@@ -100,7 +100,7 @@ module.exports = {
         // },
         options: {
           outputPath: 'fonts/',
-          publicPath: `${deployPath}`,
+          publicPath: `${deployPath}/fonts`,
           name: '[name].[ext]',
         },
       },
@@ -109,7 +109,7 @@ module.exports = {
         loader: 'file-loader',
         options: {
           outputPath: 'fonts/',
-          publicPath: `${deployPath}`,
+          publicPath: `${deployPath}/fonts`,
           name: '[name].[ext]',
         },
         // query: {
@@ -122,7 +122,7 @@ module.exports = {
         loader: 'file-loader',
         options: {
           outputPath: 'fonts/',
-          publicPath: `${deployPath}`,
+          publicPath: `${deployPath}/fonts`,
           name: '[name].[ext]',
         },
       },
@@ -157,7 +157,7 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: `./${src_Path}/favicon`, to: `./${src_Path}/favicon` },
+        { from: `./${src_Path}/favicon`, to: `./${prod_Path}/favicon` },
       ],
     }),
     new WebpackMd5Hash()
