@@ -6,6 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 const CopyPlugin = require('copy-webpack-plugin');
 
+
 const deployPath = process.env.DEPLOY_KEY || '';
 
 const {
@@ -22,7 +23,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, prod_Path),
-    filename: 'js/[name].[chunkhash].js'
+    filename: 'js/[name].[chunkhash].js',
+    publicPath: `${deployPath}`,
   },
   optimization: {
     splitChunks: {
@@ -98,6 +100,7 @@ module.exports = {
         // },
         options: {
           outputPath: 'fonts/',
+          publicPath: `${deployPath}`,
           name: '[name].[ext]',
         },
       },
@@ -106,6 +109,7 @@ module.exports = {
         loader: 'file-loader',
         options: {
           outputPath: 'fonts/',
+          publicPath: `${deployPath}`,
           name: '[name].[ext]',
         },
         // query: {
@@ -118,6 +122,7 @@ module.exports = {
         loader: 'file-loader',
         options: {
           outputPath: 'fonts/',
+          publicPath: `${deployPath}`,
           name: '[name].[ext]',
         },
       },
@@ -143,18 +148,18 @@ module.exports = {
       filename: 'index.html',
       minify: {
         collapseWhitespace: true
-      }
+      },
     }),
     new webpack.ProvidePlugin({
       $: "jquery/dist/jquery.min.js",
       jQuery: "jquery/dist/jquery.min.js",
       "window.jQuery": "jquery/dist/jquery.min.js"
     }),
-    new WebpackMd5Hash(),
     new CopyPlugin({
       patterns: [
-        { from: `./${src_Path}/favicon`, to: `./${prod_Path}/favicon` }
-      ]
-    })
+        { from: `./${src_Path}/favicon`, to: `./${src_Path}/favicon` },
+      ],
+    }),
+    new WebpackMd5Hash()
   ]
 };
