@@ -14,6 +14,7 @@
 
     flex: none;
     width: 100%;
+    z-index: 1052;
     height: 100px;
     font-size: 13px;
     position: fixed;
@@ -35,7 +36,7 @@
     }
 }
 
-@media (min-width: 1151px) {
+@media (min-width: 769px) {
     .main-nav {
         height: 100%;
         flex-grow: 1;
@@ -92,6 +93,12 @@
 
 @media (max-width: 1150px) {
     .header {
+        height: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
         &--desktop {
             display: none;
         }
@@ -99,5 +106,26 @@
         &--mobile {
             display: block;
         }
+    }
+
+    .header__top {
+        height: 100%;
+        display: block;
+    }
+
+    .header__top > .container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header--mobile {
+        height: 100%;
+        position: relative;
+    }
+
+    .header__top .logo {
+        font-size: 20px;
     }
 }

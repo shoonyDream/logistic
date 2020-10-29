@@ -14,11 +14,9 @@
   "author": "mwieth",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.12.3",
-    "@babel/preset-env": "^7.12.1",
     "autoprefixer": "^8.6.0",
     "babel-core": "^6.26.3",
-    "babel-loader": "^8.1.0",
+    "babel-loader": "^7.1.4",
     "babel-plugin-transform-es2015-destructuring": "^6.23.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
@@ -42,7 +40,7 @@
     "webpack-md5-hash": "0.0.6"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.12.1",
+    "babel-polyfill": "^6.26.0",
     "body-scroll-lock": "^2.6.4",
     "imports-loader": "^1.2.0",
     "jquery": "^2.2.4",

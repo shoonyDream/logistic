@@ -150,8 +150,13 @@ ${require('./template/header.html')}
 					<div class="form__col form__col--double">
 						<div class="form__item">
 							<div class="custom-hundler">
-							  <input type="range" min="1" max="100" value="50" class="custom-hundler__input" id="customHundler">
-								<p>Value: <span id="customHundlerValue"></span></p>
+								<div class="custom-hundler__header">
+									<div class="custom-hundler__text">Sed ut perspiciatis, unde omnis iste natus</div>
+									<div class="custom-hundler__value"><span id="customHundlerValue"></span>%</div>
+								</div>
+								<div class="custom-hundler__body">
+									<input type="range" min="1" max="100" value="50" class="custom-hundler__input" id="customHundler">
+								</div>
 							</div>
 						</div>
 					</div>
@@ -176,8 +181,8 @@ ${require('./template/header.html')}
 						</div>
 					</div>
 					<div class="form__col">
-						<div class="form__item form__item--action">
-							<button class="btn btn--primary u-entire-width" type="submit"><span>Отправить</span></button>
+						<div class="form__item form__item--action u-entire-height">
+							<button class="btn btn--primary u-entire-width u-entire-height" type="submit"><span>Отправить</span></button>
 						</div>
 					</div>
 				</div>

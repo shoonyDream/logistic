@@ -188,12 +188,23 @@ $hamburger-types: (
 
 @media (max-width: 1150px) {
 	.hamburger {
-        margin-left: 0;
-    }
+		margin-left: auto;
+	}
+
+	.nav-container {
+		right: 0;
+		top: 60px;
+		width: 100vw;
+		position: fixed;
+		background-color: #fff;
+		height: calc(100vh - 60px);
+	}
 }
 
 @media (max-width: 420px) {
 	.hamburger {
-        padding: 10px;
-    }
+		padding: 10px;
+	}
 }
+
+

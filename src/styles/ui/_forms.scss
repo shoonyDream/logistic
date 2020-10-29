@@ -1,50 +1,68 @@
 input {
-    border: none;
-    outline: none;
-    display: block;
+	border: none;
+	outline: none;
+	display: block;
 }
 
 .input {
-    width: 100%;
-    color: $charade;
-    font-size: 18px;
-    border-radius: 3px;
-    padding: 14px 13px;
-    border-color: $white;
-    background-color: $iron;
+	width: 100%;
+	color: $charade;
+	font-size: 18px;
+	border-radius: 3px;
+	padding: 14px 13px;
+	border-color: $white;
+	background-color: $iron;
 
-    &::placeholder {
-        color: $charade;
-    }
+	&::placeholder {
+		color: $charade;
+	}
 
-    &:focus {
-        border-color: $silver;
+	&:focus {
+		border-color: $silver;
 
-        &::placeholder {
-            opacity: 0.6;
-        }
-    }
+		&::placeholder {
+			opacity: 0.6;
+		}
+	}
 }
 
 .form {
-    margin-top: 20px;
+	margin-top: 20px;
 
-    &__row {
-        display: flex;
-        flex-wrap: wrap;
-        margin: -20px -20px 0;
-        justify-content: center;
-    }
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		margin: -20px -20px 0;
+		justify-content: center;
+	}
 
-    &__col {
-        padding: 0 20px;
-        margin-top: 20px;
-        max-width: 33.333%;
-        flex-basis: 33.333%;
+	&__col {
+		padding: 0 20px;
+		margin-top: 20px;
+		max-width: 33.333%;
+		flex-basis: 33.333%;
 
-        &--double {
-            max-width: 66.666%;
-            flex-basis: 66.666%;
-        }
-    }
+		&--double {
+			max-width: 66.666%;
+			flex-basis: 66.666%;
+		}
+	}
+}
+
+@media (max-width: 1150px) {
+	.form__col {
+		max-width: 50%;
+		flex-basis: 50%;
+	}
+}
+
+@media (max-width: 768px) {
+	.form {
+		margin-top: 40px;
+	}
+
+	.form__col {
+		flex-basis: 100%;
+		max-width: 100%;
+	}
 }

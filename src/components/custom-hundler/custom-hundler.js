@@ -5,3 +5,7 @@ customHundlerValue.innerHTML = customHundler.value;
 customHundler.onchange = function() {
   customHundlerValue.innerHTML = this.value;
 }
+
+customHundler.oninput = function() {
+  customHundlerValue.innerHTML = this.value;
+}
