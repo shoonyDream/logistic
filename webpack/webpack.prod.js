@@ -4,6 +4,7 @@ const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const deployPath = process.env.DEPLOY_KEY || '';
 
@@ -21,7 +22,18 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, prod_Path),
-    filename: '[name].[chunkhash].js'
+    filename: 'js/[name].[chunkhash].js'
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendor",
+          chunks: "initial",
+        },
+      },
+    },
   },
   module: {
     rules: [{
@@ -80,22 +92,34 @@ module.exports = {
       {
         test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader',
-        query: {
-          limit: 10000,
-          mimetype: 'application/font-woff'
-        }
+        // query: {
+        //   limit: 10000,
+        //   mimetype: 'application/font-woff'
+        // },
+        options: {
+          outputPath: 'fonts/',
+          name: '[name].[ext]',
+        },
       },
       {
         test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader',
-        query: {
-          limit: '10000',
-          mimetype: 'application/octet-stream'
-        }
+        options: {
+          outputPath: 'fonts/',
+          name: '[name].[ext]',
+        },
+        // query: {
+        //   limit: '10000',
+        //   mimetype: 'application/octet-stream'
+        // }
       },
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader'
+        loader: 'file-loader',
+        options: {
+          outputPath: 'fonts/',
+          name: '[name].[ext]',
+        },
       },
       {
         test: /\.js$/,
@@ -111,7 +135,7 @@ module.exports = {
       root: process.cwd()
     }),
     new MiniCssExtractPlugin({
-      filename: 'style.[contenthash].css'
+      filename: 'css/style.[contenthash].css'
     }),
     new HtmlWebpackPlugin({
       hash: true,
@@ -126,6 +150,11 @@ module.exports = {
       jQuery: "jquery/dist/jquery.min.js",
       "window.jQuery": "jquery/dist/jquery.min.js"
     }),
-    new WebpackMd5Hash()
+    new WebpackMd5Hash(),
+    new CopyPlugin({
+      patterns: [
+        { from: `./${src_Path}/favicon`, to: `./${prod_Path}/favicon` }
+      ]
+    })
   ]
 };
