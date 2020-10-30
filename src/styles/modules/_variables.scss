@@ -11,6 +11,7 @@ $bright-gray: #3d4050;
 $bright-gray-opacity-0-9: rgba(61, 64, 80, 0.9);
 $storm-gray: #6f6d7b;
 $iron: #dfdfe1;
+$seashell: #F1F1F1;
 
 $colors:
 	$white,
@@ -25,7 +26,8 @@ $colors:
 	$bright-gray,
 	$bright-gray-opacity-0-9,
 	$storm-gray,
-	$iron;
+	$iron,
+	$seashell;
 
 $colorNames:
 	'white',
@@ -40,7 +42,8 @@ $colorNames:
 	'bright-gray',
 	'bright-gray-opacity-0-9',
 	'storm-gray',
-	'iron';
+	'iron',
+	'seashell';
 
 @mixin colorsClases($colors, $colorNames) {
   $i: 1;

@@ -1,10 +1,10 @@
 
 ${require('./template/header.html')}
-<section class="section section--bg section--banner">
+<section class="section section--bg section--banner" style="background-image: url('${require(`./images/bg.jpg`)}');">
 	<div class="container container--wide">
 		<div class="section__container">
 			<div class="section__header">
-				<h2 class="section__title"><span class="picton-blue-text">Lorem ipsum</span> dolor sit amet consectetur <span class="picton-blue-text">adipiscing</span></h2>
+				<h2 class="section__title"><span class="accent-text-light">Lorem ipsum</span> dolor sit amet consectetur <span class="accent-text-light">adipiscing</span></h2>
 			</div>
 			<div class="section__body">
 				<p><strong>At vero eos et accusamus et iusto odio dignissimos ducimus!</strong></p>
@@ -28,7 +28,7 @@ ${require('./template/header.html')}
 <section class="section section--bg section--map section--dark">
 	<div class="container container--wide">
 	<div class="section__header">
-			<h2 class="section__title" id="form">Оформление <span class="havelock-blue-text">заказа</span></h2>
+			<h2 class="section__title" id="form">Оформление <span class="accent-text">заказа</span></h2>
 			<div class="section__subtitle">Перед заполнением формы ознакомьтесь с нашей схемой работы!</div>
 		</div>
 		<div class="section__body">
@@ -139,7 +139,7 @@ ${require('./template/header.html')}
 					</div>
 					<div class="form__col">
 						<div class="form__item">
-							<input type="email" name="E-mail" class="input" placeholder="Ваш e-mail">
+							<input type="email" name="E-mail" class="input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Ваш e-mail">
 						</div>
 					</div>
 					<div class="form__col">

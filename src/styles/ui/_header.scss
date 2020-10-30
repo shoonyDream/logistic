@@ -27,11 +27,25 @@
         justify-content: space-between;
 
         .logo {
+            height: 100%;
             color: $white;
             flex-shrink: 0;
             font-size: 28px;
+            max-width: 240px;
+            flex-basis: 240px;
             letter-spacing: 0.2px;
             font-family: 'LatoWebSemibold';
+
+            &__container {
+                height: 100%;
+                display: flex;
+                align-items: center;
+            }
+
+            @media (max-width: 1150px) {
+                max-width: 170px;
+                flx-basis: 170px;
+            }
         }
     }
 }

@@ -77,6 +77,14 @@ a.footer-info-item,
 	}
 }
 
+a.footer-info-item {
+	transition: opacity 0.2s linear;
+
+	&:hover {
+		opacity: 0.8;
+	}
+}
+
 
 .copyright {
 	height: 100%;

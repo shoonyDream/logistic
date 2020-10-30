@@ -5,11 +5,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://kit.fontawesome.com/eb448ec1e0.js" crossorigin="anonymous"></script>
-        <link rel="apple-touch-icon" sizes="76x76" href="/logistic/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/logistic/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/logistic/favicon/favicon-16x16.png">
-        <link rel="manifest" href="/logistic/favicon/site.webmanifest">
-        <link rel="mask-icon" href="/logistic/favicon/safari-pinned-tab.svg" color="#383a45">
+        <link rel="apple-touch-icon" sizes="76x76" href="./apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+        <link rel="manifest" href="./site.webmanifest">
+        <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#383a45">
         <meta name="msapplication-TileColor" content="#383a45">
         <meta name="theme-color" content="#383a45">
         <title>LOREMIPSUM.NET</title>
@@ -21,7 +21,9 @@
                 <div class="container container--wide">
                     <div class="header__top">
                         <div class="logo">
-                            <span class="u-uppercase">LoremIpsum.<span class="picton-blue-text">net</span></span>
+                            <div class="logo__container">
+                                <img src="../images/logo.png" alt="logo" title="logo">
+                            </div>
                         </div>
                         ${require('./templates_area/main-nav.html')}
                     </div>
@@ -31,8 +33,8 @@
                 <div class="header__top">
                     <div class="container container--wide">
                         <div class="logo">
-                            <div class="logo">
-                                <span class="u-uppercase">LoremIpsum.<span class="picton-blue-text">net</span></span>
+                            <div class="logo__container">
+                                <img src="../images/logo.png" alt="logo" title="logo">
                             </div>
                         </div>
                         <button class="hamburger hamburger--squeeze js-toggle-nav" type="button">
@@ -41,7 +43,8 @@
                             </span>
                         </button>
                         <div class="nav-container js-mobile-menu" style="display: none">
-                            ${require('./templates_area/main-nav.html')}
+                                ${require('./templates_area/main-nav.html')}
+                            </div>
                         </div>
                     </div>
                 </div>

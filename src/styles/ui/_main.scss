@@ -39,6 +39,14 @@ body {
 	height: 100%;
 }
 
+.accent-text {
+	@extend .havelock-blue-text;
+}
+
+.accent-text-light {
+	@extend .picton-blue-text;
+}
+
 @media (max-width: 1150px) {
 	.container {
 		padding-left: 20px;

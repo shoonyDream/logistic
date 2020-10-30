@@ -195,9 +195,28 @@ $hamburger-types: (
 		right: 0;
 		top: 60px;
 		width: 100vw;
+		overflow: auto;
 		position: fixed;
-		background-color: #fff;
+		background-color: $charade;
 		height: calc(100vh - 60px);
+
+		.main-nav {
+			padding: 20px 0;
+		}
+
+		.main-nav__link {
+			color: $white;
+			display: block;
+			font-size: 18px;
+			padding: 10px 20px;
+			text-decoration: none;
+		}
+
+		.main-nav__link.active,
+		.main-nav__link:hover,
+		.main-nav__link:focus {
+			color: #42a9ed;
+		}
 	}
 }
 
@@ -206,5 +225,3 @@ $hamburger-types: (
 		padding: 10px;
 	}
 }
-
-

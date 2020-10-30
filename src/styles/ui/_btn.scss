@@ -1,16 +1,17 @@
 .btn.btn {
+	cursor: pointer;
 	font-size: 14px;
 	border: 1px solid;
-	padding: 13px 56px 12px;
 	border-radius: 4px;
 	text-decoration: none;
+	padding: 13px 56px 12px;
 	text-transform: uppercase;
+	transition: background-color 0.2s linear, color 0.2s linear, border-color 0.2s linear;
 
 	&--primary {
 		color: $white;
 		border-color: $white;
 		background-color: $havelock-blue;
-		transition: background-color 0.2s linear;
 
 		&:hover {
 			background-color: $picton-blue;
@@ -22,7 +23,7 @@
 			border-color: $havelock-blue;
 
 			&:hover {
-				background-color: $white;
+				background-color: $iron;
 				border-color: $picton-blue;
 			}
 		}
@@ -32,11 +33,11 @@
 		color: $shark;
 		background-color: $white;
 		border-color: $storm-gray;
-		transition: color 0.2s linear, border-color 0.2s linear;
 
 		&:hover {
 			color: $charade;
 			border-color: $charade;
+			background-color: $seashell;
 		}
 	}
 }
