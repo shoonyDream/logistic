@@ -94,10 +94,6 @@ module.exports = {
       {
         test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader',
-        // query: {
-        //   limit: 10000,
-        //   mimetype: 'application/font-woff'
-        // },
         options: {
           outputPath: 'fonts/',
           publicPath: `${deployPath}/fonts`,
@@ -112,10 +108,6 @@ module.exports = {
           publicPath: `${deployPath}/fonts`,
           name: '[name].[ext]',
         },
-        // query: {
-        //   limit: '10000',
-        //   mimetype: 'application/octet-stream'
-        // }
       },
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
